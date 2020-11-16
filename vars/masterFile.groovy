@@ -2,7 +2,7 @@
 def call(Closure body) {
     node {
         stage("SCM checkout") {
-            checkout scm
+            //checkout scm
         }
         stage("Test") {
             

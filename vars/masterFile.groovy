@@ -2,9 +2,10 @@
 def call(Closure body) {
     node {
         stage("SCM checkout") {
-            //checkout scm
+            checkout scm
         }
         stage("Test") {
+            echo "no tests to run"
             
         }
         stage("docker build") {

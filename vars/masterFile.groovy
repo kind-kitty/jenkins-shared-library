@@ -4,9 +4,7 @@ def call(Closure body) {
 
         stage("SCM checkout") {
             checkout scm
-            // repo_name = getRepoName()
-            // commit_id = getCommitId()
-            // ecr_registry = constants.ECR_REGISTRY
+
         }
         stage("Test") {
             echo "no tests to run"
@@ -14,8 +12,7 @@ def call(Closure body) {
         }
         stage("docker build") {
             build()
-            // docker.build("${ecr_registry}/${repo_name}:${commit_id}", '.')
-            // echo "docker build is successful"
+            
         }
         stage("docker push") {
             

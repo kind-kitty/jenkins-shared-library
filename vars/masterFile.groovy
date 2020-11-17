@@ -4,7 +4,7 @@ def call(Closure body) {
 
         stage("SCM checkout") {
             checkout scm
-            repo_name = getRepoName()
+            //repo_name = getRepoName()
             commit_id = getCommitId()
             ecr_registry = constants.ECR_REGISTRY
         }
@@ -13,7 +13,7 @@ def call(Closure body) {
             
         }
         stage("docker build") {
-            docker.build("${ecr_registry}/${repo_name}:${commit_id}", '.')
+            docker.build("${ecr_registry}/getRepoName():${commit_id}", '.')
             echo "docker build is successful"
         }
         stage("docker push") {

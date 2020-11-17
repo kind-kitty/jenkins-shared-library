@@ -3,11 +3,12 @@ def call(Closure body) {
     node {
         def repo_name
         def commit_id
+        def x
         stage("SCM checkout") {
             checkout scm
             repo_name = getRepoName()
             commit_id = getCommitId()
-            echo constants.ECR_REGISTRY
+            x = echo constants.ECR_REGISTRY
         }
         stage("Test") {
             echo "no tests to run"

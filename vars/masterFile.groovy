@@ -15,7 +15,7 @@ def call(Closure body) {
             
         }
         stage("docker build") {
-            docker.build("constants.ECR_REGISTRY/${repo_name}:${commit_id}", '.')
+            docker.build("${x}/${repo_name}:${commit_id}", '.')
             echo "docker build is successful"
         }
         stage("docker push") {

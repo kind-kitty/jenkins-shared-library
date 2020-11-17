@@ -6,4 +6,4 @@ def call(){
     ecr_registry = constants.ECR_REGISTRY
     docker.build("${ecr_registry}/${repo_name}:${commit_id}", '.')
     echo "docker build is successful"
-        
+}

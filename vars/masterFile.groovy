@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 def call(Closure body) {
     node {
-        def repo_name
-        def commit_id
-        def x
+
         stage("SCM checkout") {
             checkout scm
             repo_name = getRepoName()
